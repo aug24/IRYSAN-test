@@ -1,0 +1,26 @@
+@* views/neoForm.scala.html *@
+@import model._
+@import helper._
+@()
+
+<html>
+<head>
+    <title>NEO Data search</title>
+</head>
+<body>
+<h1>Near Earth Objects Search</h1>
+
+<h2>Enter Date Range for NEO Data</h2>
+
+    <form action="/neo" method="POST">
+        <label for="startDate">Start Date (yyyy-mm-dd):</label>
+        <input type="text" id="startDate" name="startDate" placeholder="2023-01-01" required>
+<br/>
+        <label for="endDate">End Date (yyyy-mm-dd):</label>
+        <input type="text" id="endDate" name="endDate" placeholder="2023-01-31" required>
+<br/>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

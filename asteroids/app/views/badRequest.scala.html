@@ -1,0 +1,29 @@
+@* views/neoData.scala.html *@
+@import model._
+@(errorResponse: ErrorResponse)
+
+<html>
+<head>
+    <title>NEO Data - Bad Request</title>
+</head>
+<body>
+<h1>Near Earth Objects Data - Bad Request</h1>
+
+<h2>Error Response </h2>
+<ul>
+    <li>
+        <p>Code: @{errorResponse.code}</p>
+    </li>
+    <li>
+        <p>HTTP Error: @{errorResponse.http_error}</p>
+    </li>
+    <li>
+        <p>Error Message: @{errorResponse.error_message}</p>
+    </li>
+    <li>
+        <p>Request : @{errorResponse.request}</p>
+    </li>
+</ul>
+
+</body>
+</html>

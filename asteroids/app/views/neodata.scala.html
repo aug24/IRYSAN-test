@@ -1,0 +1,41 @@
+@* views/neoData.scala.html *@
+@import model._
+@(neoData: NeoData, startDate: String, endDate: String)
+
+<html>
+<head>
+    <title>NEO Data</title>
+</head>
+<body>
+<h1>Near Earth Objects Data</h1>
+
+<h2>Element Count: @neoData.element_count</h2>
+
+<h2>Near Earth Objects</h2>
+@for((date, objects) <- neoData.near_earth_objects) {
+<h3>@date</h3>
+    <table>
+        <tr>
+            <th>
+              Name
+            </th>
+            <th>
+                Id
+            </th>
+        </tr>
+    @for(obj <- objects) {
+        <tr>
+            <td>
+                <a href="detail?startDate=@startDate&endDate=@endDate&neoId=@obj.id">
+                    @obj.name
+                </a>
+            </td>
+            <td>
+                @obj.id
+            </td>
+        </tr>
+    }
+    </table>
+}
+</body>
+</html>
